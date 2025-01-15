@@ -73,9 +73,9 @@ jobs:
           echo "<settings>
                   <servers>
                     <server>
-                      <id>snapshots</id>
-                      <username>${{ secrets.JFROG_USERNAME }}</username>
-                      <password>${{ secrets.JFROG_API_KEY }}</password>
+                      <id>central</id>
+                      <username>${{ secrets.JFROG1_USERNAME }}</username>
+                      <password>${{ secrets.JFROG1_API_KEY }}</password>
                     </server>
                   </servers>
                 </settings>" > ~/.m2/settings.xml
