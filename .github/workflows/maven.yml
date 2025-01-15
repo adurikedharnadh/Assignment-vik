@@ -66,12 +66,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Upload Artifact to JFrog Artifactory
-        run: |
+      - name: Configure Maven settings
+      run: |
           echo "Uploading artifact to JFrog Artifactory..."
-          curl -u "${{ secrets.JFROG_USERNAME }}:${{ secrets.JFROG_API_KEY }}" \
-               -T target/my-helloworld.war \
-               "http://3.94.159.27:8082/artifactory/hello-world-war-libs-release/"
+          mkdir -p ~/.m2
+          echo "<settings>
+                  <servers>
+                    <server>
+                      <id>snapshots</id>
+                      <username>${{ secrets.JFROG_USERNAME }}</username>
+                      <password>${{ secrets.JFROG_API_KEY }}</password>
+                    </server>
+                  </servers>
+                </settings>" > ~/.m2/settings.xml
+
+   #   - name: Upload Artifact to JFrog Artifactory
+    #    run: |
+     #     echo "Uploading artifact to JFrog Artifactory..."
+      #    curl -u "${{ secrets.JFROG_USERNAME }}:${{ secrets.JFROG_API_KEY }}" \
+       #        -T target/my-helloworld.war \
+        #       "http://3.94.159.27:8082/artifactory/hello-world-war-libs-release/"
 
   # Matrix Job: Deployment to Staging and Production (Self-Hosted EC2 with Tomcat installed)
   deploy:
