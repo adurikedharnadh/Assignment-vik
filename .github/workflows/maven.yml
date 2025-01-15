@@ -73,13 +73,14 @@ jobs:
           echo "<settings>
                   <servers>
                     <server>
-                      <id>central</id>
+                      <id>snapshots</id>
                       <username>${{ secrets.JFROG1_USERNAME }}</username>
                       <password>${{ secrets.JFROG1_API_KEY }}</password>
                     </server>
                   </servers>
                 </settings>" > ~/.m2/settings.xml
 
+          mvn clean deploy    
    #   - name: Upload Artifact to JFrog Artifactory
     #    run: |
      #     echo "Uploading artifact to JFrog Artifactory..."
