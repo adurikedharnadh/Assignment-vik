@@ -15,6 +15,14 @@
   <sonar.projectKey>assignment-vik_assignment-vik</sonar.projectKey>
     </properties>
 
+         <distributionManagement>
+    <repository>
+        <id>hello-world-war-libs-release</id>
+        <name>hello-world-war-libs-release</name>
+        <url>http://3.94.159.27:8082/artifactory/hello-world-war-libs-release/</url>
+    </repository>
+</distributionManagement>
+
     <dependencies>
         <!-- Servlet API Dependency -->
         <dependency>
