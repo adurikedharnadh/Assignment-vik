@@ -15,11 +15,11 @@
   <sonar.projectKey>assignment-vik_assignment-vik</sonar.projectKey>
     </properties>
 
-         <distributionManagement>
+   <distributionManagement>
     <repository>
-        <id>hello-world-war</id>
-        <name>hello-world-war-libs-release</name>
-        <url>http://3.94.159.27:8082/artifactory/hello-world-war-libs-release/</url>
+        <id>central</id>
+        <name>ip-172-31-24-62-releases</name>
+        <url>http://3.94.159.27:8081/artifactory/assignment-vik-libs-release</url>
     </repository>
 </distributionManagement>
 
