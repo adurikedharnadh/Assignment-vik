@@ -6,7 +6,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>my-helloworld</artifactId>
-    <version>1.0.0</version>
+    <version>1.0-snapshot</version>
     <packaging>war</packaging>
 
     <properties>
@@ -15,13 +15,14 @@
   <sonar.projectKey>assignment-vik_assignment-vik</sonar.projectKey>
     </properties>
 
-   <distributionManagement>
-    <repository>
-        <id>central</id>
-        <name>ip-172-31-24-62-releases</name>
-        <url>http://3.94.159.27:8081/artifactory/assignment-vik-libs-release</url>
-    </repository>
+<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ip-172-31-24-62-snapshots</name>
+        <url>http://3.94.159.27:8081/artifactory/assignment-vik-libs-snapshot</url>
+    </snapshotRepository>
 </distributionManagement>
+
 
     <dependencies>
         <!-- Servlet API Dependency -->
