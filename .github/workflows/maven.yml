@@ -121,4 +121,4 @@ jobs:
         run: |
           echo "Manual deploy triggered, deploying to production..."
           # Deployment logic here
-        if: ${{ github.event.inputs.deploy == 'true' }}  # Condition based on the input 
+        if: ${{ github.event.inputs.deploy == 'true' }}  # Condition based on the input
