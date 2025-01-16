@@ -119,7 +119,7 @@ jobs:
 
   # Conditional Job: Trigger Deploy Only if Deploy Input is True (Manual Trigger )
   deploy_input_condition:
-    # This job will run on the self-hosted runner with the "production" label.
+    # This job will run on the self-hosted runner with the "production"  label.
     # Ensure your production runner has the label `production` assigned to it.
     runs-on: [self-hosted, production]  # Self-hosted EC2 with Tomcat installed (Production)
     if: ${{ github.event.inputs.deploy == 'true' }}  # Only runs if the deploy input is set to true from workflow_dispatch
