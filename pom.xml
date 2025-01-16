@@ -17,8 +17,8 @@
 
 <distributionManagement>
     <snapshotRepository>
-        <id>snapshots</id>
-        <name>ip-172-31-24-62-snapshots</name>
+        <id>assignment-vik</id>
+        <name>assignment-vik-libs-snapshot</name>
         <url>http://44.222.253.17:8081/artifactory/assignment-vik-libs-snapshot</url>
     </snapshotRepository>
 </distributionManagement>
