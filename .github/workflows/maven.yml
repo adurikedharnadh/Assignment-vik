@@ -85,7 +85,7 @@ jobs:
       matrix:
         environment: [staging, production]
       
-    runs-on: [self-hosted, staging}]  # Use dynamic environment (staging or production)
+    runs-on: [self-hosted, staging]  # Use dynamic environment (staging or production)
     needs: [sonar_analysis, upload_artifact]  # Waits for SonarQube and Artifactory jobs to complete
       # Deploy to both staging and production environments
     steps:
