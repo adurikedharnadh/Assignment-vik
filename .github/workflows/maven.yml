@@ -75,7 +75,7 @@ jobs:
       - name: Upload Artifact to JFrog Artifactory
         run: |
           echo "Uploading artifact to JFrog Artifactory..."
-          curl -u "${{ secrets.JFROG1_USERNAME }}:${{ secrets.JFROG1_API_KEY }}" -T /home/ubuntu/.m2/repository/com/example/my-helloworld/1.0-snapshot/hello-world-war-1.0.0.war "http://44.222.253.17:8082/artifactory/assignment-vik-libs-snapshot/hello-world-war-1.0.0.war"
+          curl -u "${{ secrets.JFROG1_USERNAME }}:${{ secrets.JFROG1_API_KEY }}" -T /home/ubuntu/.m2/repository/com/efsavage/hello-world-war/1.0.0/hello-world-war-1.0.0.war "http://44.222.253.17:8082/artifactory/assignment-vik-libs-snapshot/hello-world-war-1.0.0.war"
   # Matrix Job: Deployment to Staging and Production (Self-Hosted EC2 with Tomcat installed)
   deploy:
     # This job will deploy to both staging and production environments based on the matrix configuration.
