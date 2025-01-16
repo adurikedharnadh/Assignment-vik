@@ -116,7 +116,6 @@ jobs:
              
             else
               echo "Skipping production deployment: Only from master branch"
-            fi
           fi
         if: ${{ needs.upload_artifact.result == 'success' }}  # Deploy only if the artifact upload was successful
 
