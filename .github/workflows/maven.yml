@@ -52,9 +52,14 @@ jobs:
 
       - name: Run SonarQube analysis
         uses: SonarSource/sonarcloud-github-action@v1
-        with:
-          sonar-token: ${{ secrets.SONAR_TOKEN }}
-          sonar-host-url: 'https://sonarcloud.io'
+      #  with:
+       #   sonar-token: ${{ secrets.SONAR_TOKEN }}
+        #  sonar-host-url: 'https://sonarcloud.io'
+        run: |
+          mvn clean verify sonar:sonar \
+            -Dsonar.organization=assignment-vik \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=4986d8095caf67afa60b6c4c253e8c18e978bf7b
 
   upload_artifact:
     # This job will also run on the self-hosted runner with the "staging" label.
