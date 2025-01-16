@@ -94,7 +94,7 @@ jobs:
 
       - name: Deploy to Tomcat (Staging/Production)
         run: |
-          echo "Deploying to ${matrix.environment}..."
+          echo "Deploying to matrix.environment..."
 
           # Deploy artifact to the appropriate Tomcat server based on the environment
           if [ "staging" == "staging" ]; then
