@@ -19,7 +19,7 @@ on:
 jobs:
   # Parallel Job: Build and Test on Self-Hosted EC2 (with Tomcat installed )
   build_and_test:
-    # This job will run on a self-hosted runner with the "staging" label.
+    # This job will run  on a self-hosted runner with the "staging" label.
     # Ensure your self-hosted runner for staging has the label `staging` assigned to it.
     runs-on: [self-hosted, staging]  # Self-hosted EC2 with Tomcat installed (Staging)
     steps:
