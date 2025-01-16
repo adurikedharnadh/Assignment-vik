@@ -51,10 +51,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run SonarQube analysis
-        uses: SonarSource/sonarcloud-github-action@v1
-      #  with:
-       #   sonar-token: ${{ secrets.SONAR_TOKEN }}
-        #  sonar-host-url: 'https://sonarcloud.io'
+     #   uses: SonarSource/sonarcloud-github-action@v1
+       #  with:
+      #    sonar-token: 4986d8095caf67afa60b6c4c253e8c18e978bf7b
+      #    sonar-host-url: 'https://sonarcloud.io'
         run: |
           mvn clean verify sonar:sonar \
             -Dsonar.organization=assignment-vik \
