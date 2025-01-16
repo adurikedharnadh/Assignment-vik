@@ -17,7 +17,7 @@ on:
         default: 'false'
 
 jobs:
-  # Parallel Job: Build and Test on Self-Hosted EC2 (with Tomcat installed)
+  # Parallel Job: Build and Test on Self-Hosted EC2 (with Tomcat installed )
   build_and_test:
     # This job will run on a self-hosted runner with the "staging" label.
     # Ensure your self-hosted runner for staging has the label `staging` assigned to it.
@@ -69,16 +69,14 @@ jobs:
       - name: Upload Artifact to JFrog Artifactory
         run: |
           echo "Uploading artifact to JFrog Artifactory..."
-          curl -u "${{ secrets.JFROG_USERNAME }}:${{ secrets.JFROG_API_KEY }}" \
-               -T target/my-helloworld.war \
-               "https://jfrog.example.com/artifactory/my-repo/my-helloworld-${{ needs.build_and_test.outputs.version }}.war"
+          curl -u "admin:cmVmdGtuOjAxOjE3Njg0Njk3OTI6bTA4TzNmcDducEtkaEhNZG1iejRRT2kzUk41" -T "target/my-helloworld-1.0-snapshot.war" "http://44.222.253.17:8082/artifactory/assignment-vik-libs-snapshot/my-helloworld-1.0-snapshot.war"
 
   # Matrix Job: Deployment to Staging and Production (Self-Hosted EC2 with Tomcat installed)
   deploy:
     # This job will deploy to both staging and production environments based on the matrix configuration.
     # The staging environment will use the self-hosted runner with the "staging" label.
     # The production environment will use the self-hosted runner with the "production" label.
-    runs-on: [self-hosted, ${{ matrix.environment }}]  # Use dynamic environment (staging or production)
+    runs-on: [self-hosted, Production]  # Use dynamic environment (staging or production)
     needs: [sonar_analysis, upload_artifact]  # Waits for SonarQube and Artifactory jobs to complete
     strategy:
       matrix:
